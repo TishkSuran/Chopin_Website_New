@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frédéric Chopin | Timeless Piano Compositions</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/static-waveform.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Chopin</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="biography.html">Biography</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="nocturnes.html">Nocturnes</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="interactive.html">Interactive</a></li>
+                    <li><a href="mailing-list.html">Mailing List</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <section class="hero-section">
+                <div>
+                    <p class="composer">COMPOSER</p>
+                    <h1>Frédéric Chopin</h1>
+                    <p>Frédéric Chopin (1810–1849) was a luminary of the Romantic era, known for his expressive piano compositions that continue to captivate audiences worldwide. Discover his timeless music and explore the depth of Romantic-era artistry.</p>
+                    <a href="biography.html" class="btn">Learn More</a>
+                </div>
+            </section>
+
+            <section class="influence-section">
+                <h2 class="section-title">Discover Chopin's Influence</h2>
+                <p>Chopin revolutionised piano technique with his poetic etudes, nocturnes, preludes, and polonaises. His legacy shaped the future of Romantic music, inspiring composers like Liszt, Brahms, and beyond.</p>
+            </section>
+            
+            <section class="featured-section">
+                <h2 class="section-title">Featured Content</h2>
+                <div class="featured-cards">
+                    <div class="featured-card">
+                        <img src="/api/placeholder/350/200" alt="Chopin's Biography">
+                        <div class="card-content">
+                            <h3>Life & Legacy</h3>
+                            <p>Explore the fascinating life of the Polish-born composer, from his early days as a child prodigy to his years in Paris and his relationship with George Sand.</p>
+                            <a href="biography.html" class="card-link">Explore Biography</a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <img src="/api/placeholder/350/200" alt="Complete Works">
+                        <div class="card-content">
+                            <h3>Complete Works</h3>
+                            <p>Browse through Chopin's extensive catalog of compositions, including his nocturnes, polonaises, waltzes, mazurkas, and more.</p>
+                            <a href="works.html" class="card-link">View Compositions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <img src="/api/placeholder/350/200" alt="Interactive Piano">
+                        <div class="card-content">
+                            <h3>Interactive Piano</h3>
+                            <p>Experience Chopin's music through our interactive piano. Play some of his most famous melodies or create your own compositions.</p>
+                            <a href="interactive.html" class="card-link">Try It Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="quote-section">
+                <div class="quote-container">
+                    <blockquote>
+                        "Bach is an astronomer, discovering the most marvelous stars. Beethoven challenges the universe. I only try to express the soul and the heart of man."
+                        <cite>— Frédéric Chopin</cite>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
+
+        <section class="music-player">
+            <h2 class="section-title">Explore Chopin's Nocturnes</h2>
+            
+            <div id="track-1" class="track" data-src="assets/audio/Nocturne.mp3">
+                <div class="loading-indicator"></div>
+                <div class="track-info">
+                    <div class="album-art">
+                        <img src="/api/placeholder/60/60" alt="Album cover">
+                    </div>
+                    <div class="track-details">
+                        <h3>Nocturne in F minor, Op. 55 No. 1</h3>
+                        <p>Chopin</p>
+                    </div>
+                </div>
+                
+                
+                <div class="track-controls">
+                    <div class="genre-tag">Romantic, Piano</div>
+                    <div class="track-actions">
+                        <button class="play-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Add to favourites">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Add to playlist">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Share">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="track-2" class="track" data-src="assets/audio/nocturne-e-flat.mp3">
+                <div class="loading-indicator"></div>
+                <div class="track-info">
+                    <div class="album-art">
+                        <img src="/api/placeholder/60/60" alt="Album cover">
+                    </div>
+                    <div class="track-details">
+                        <h3>Nocturne in E‑flat major, Op. 9 No. 2</h3>
+                        <p>Expressive Lyrical Style</p>
+                    </div>
+                </div>
+                
+                <div class="track-controls">
+                    <div class="genre-tag">Romantic, Piano</div>
+                    <div class="track-actions">
+                        <button class="play-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Add to favourites">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Add to playlist">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" title="Share">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="explore-more">
+                <a href="nocturnes.html" class="btn">Explore All Nocturnes</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Chopin</div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="biography.html">Biography</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="nocturnes.html">Nocturnes</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="interactive.html">Interactive</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p>For inquiries: <a href="mailto:info@chopinmusic.org">info@chopinmusic.org</a></p>
+                        <p>Subscribe to our <a href="mailing-list.html">mailing list</a> for updates.</p>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Chopin Music Appreciation Society. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/static-waveform.js"></script>
+</body>
+</html>
