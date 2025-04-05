@@ -391,8 +391,10 @@ audio {
 
 .featured-card img {
     width: 100%;
-    height: auto;
+    height: 600px;
     display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card-content {
@@ -674,8 +676,10 @@ audio {
 
 .nocturne-image img {
     width: 100%;
-    height: auto;
+    height: 250px;
     display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 .nocturne-info {
