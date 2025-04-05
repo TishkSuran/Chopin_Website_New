@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frédéric Chopin | Interactive</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/interactive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Chopin</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="biography.html">Biography</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="nocturnes.html">Nocturnes</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="interactive.html" class="active">Interactive</a></li>
+                    <li><a href="mailing-list.html">Mailing List</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <section class="hero-section">
+                <div>
+                    <p class="composer">INTERACTIVE</p>
+                    <h1>Mood-Based Chopin Experience</h1>
+                    <p>Select your current mood and discover the perfect Chopin piece to match how you feel. Each selection includes a video performance to enhance your listening experience.</p>
+                </div>
+            </section>
+
+            <section class="interactive-section">
+                <h2 class="section-title">Chopin Mood Player</h2>
+                <p>What's your current mood? Select an option below to hear and watch a Chopin piece that resonates with how you feel.</p>
+                
+                <div class="mood-container">
+                    <div id="video-container" class="video-container">
+                        <iframe id="chopin-video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="mood-buttons">
+                        <button class="mood-btn" data-video="https://www.youtube.com/embed/90wBhBZjAUQ?si=XhEgVj6slqyM6O0L"  data-mood="melancholy">Melancholy</button>
+                        <button class="mood-btn" data-video="https://www.youtube.com/embed/dJP0GtpgPrU?si=_6kvRWrAmNNb8Uvb" data-mood="joyful">Joyful</button>
+                        <button class="mood-btn" data-video="https://www.youtube.com/embed/Y6RIwVi1Mjs?si=HVP_UxNo9i5s6BCU" data-mood="passionate">Passionate</button>
+                        <button class="mood-btn" data-video="https://www.youtube.com/embed/9E6b3swbnWg" data-mood="dreamy">Dreamy</button>
+                    </div>
+                    
+                    <div id="mood-info" class="mood-info">
+                        <h3>Select a mood above</h3>
+                        <p>We'll play a perfect Chopin piece for your current state of mind.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="quote-section">
+                <div class="quote-container">
+                    <blockquote>
+                        "Bach is an astronomer, discovering the most marvelous stars. Beethoven challenges the universe. I only try to express the soul and the heart of man."
+                        <cite>— Frédéric Chopin</cite>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Chopin</div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="biography.html">Biography</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="nocturnes.html">Nocturnes</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="interactive.html">Interactive</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p>For inquiries: <a href="mailto:info@chopinmusic.org">info@chopinmusic.org</a></p>
+                        <p>Subscribe to our <a href="mailing-list.html">mailing list</a> for updates.</p>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Chopin Music Appreciation Society. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/interactive.js"></script>
+</body>
+</html>
