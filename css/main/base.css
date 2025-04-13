@@ -1,0 +1,59 @@
+/* Base Styles: Variables, Typography, and Common Elements */
+
+:root {
+    --dark-bg: #121212;
+    --accent-color: #FF9D35;
+    --text-color: #f0f0f0;
+    --secondary-bg: #1E1E1E;
+    --hover-color: #c27c28;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Common Elements */
+.section-title {
+    font-size: 32px;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #121212;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* Hide audio elements */
+audio {
+    display: none;
+}

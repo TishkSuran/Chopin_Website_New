@@ -1,5 +1,3 @@
-/* Simplified and optimized waveform styles */
-
 .waveform-container {
   width: 100%;
   height: 60px;
@@ -29,7 +27,6 @@
   gap: 1px;
 }
 
-/* Combined upper and lower bar base styles */
 .waveform-bar {
   width: 100%;
   border-radius: 1px;
@@ -83,7 +80,6 @@
   border-radius: 8px;
 }
 
-/* Simplified loading animation */
 .track.loading .waveform-container::before {
   content: '';
   position: absolute;
@@ -115,12 +111,9 @@
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Hide audio elements */
 audio {
   display: none;
 }
-
-/* Responsive adjustment */
 @media (max-width: 768px) {
   .waveform-container {
     height: 50px;

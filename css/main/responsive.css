@@ -1,0 +1,140 @@
+/* Responsive Styles */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+    .featured-card img {
+        height: 500px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+    .works-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .works-nav {
+        position: static;
+        margin-bottom: 30px;
+    }
+    
+    .category-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .category-list li {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .category-list li:last-child {
+        border-right: none;
+    }
+    
+    .featured-card img {
+        height: 400px;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    .hero-section h1 {
+        font-size: 36px;
+    }
+    
+    .track-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .track-actions {
+        margin-top: 5px;
+    }
+    
+    .progress-container {
+        width: 100%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-item::before {
+        left: 20px;
+    }
+    
+    .timeline-year {
+        width: auto;
+        margin-bottom: 10px;
+        margin-left: 40px;
+    }
+    
+    .timeline-content {
+        margin-left: 40px;
+    }
+    
+    .timeline-content::before {
+        left: -20px;
+        top: -10px;
+        width: 2px;
+        height: 20px;
+    }
+    
+    .nocturne-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 40px 20px;
+    }
+    
+    .hero-section h1 {
+        font-size: 30px;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .quote-container blockquote {
+        font-size: 18px;
+    }
+    
+    .featured-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-card img {
+        height: 350px;
+    }
+}

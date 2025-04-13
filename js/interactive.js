@@ -8,7 +8,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the mood player
     setupMoodPlayer();
 });
 
@@ -20,10 +19,8 @@ function setupMoodPlayer() {
     const moodInfo = document.getElementById('mood-info');
     const videoFrame = document.getElementById('chopin-video');
     
-    // Active button reference
     let activeButton = null;
     
-    // Dictionary of mood descriptions
     const moodDescriptions = {
         'melancholy': {
             title: "Prelude in E minor, Op. 28, No. 4",
@@ -42,29 +39,23 @@ function setupMoodPlayer() {
             description: "This beloved nocturne evokes the tranquil, dreamy atmosphere of night. Composed in 1830-1832, it features a beautiful, ornate melody over a steady left-hand accompaniment. The piece creates a sense of intimate reflection and gentle contemplation."
         }
     };
-    
-    // Set up mood button click handlers
+
     moodButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Get mood and video URL
             const mood = button.getAttribute('data-mood');
             const videoUrl = button.getAttribute('data-video');
             
-            // Reset active button styling
             if (activeButton) {
                 activeButton.classList.remove('active');
             }
-            
-            // Set this button as active
+
             button.classList.add('active');
             activeButton = button;
-            
-            // Update the video source
+
             if (videoFrame) {
                 videoFrame.src = videoUrl;
             }
-            
-            // Update mood information
+
             if (moodInfo && moodDescriptions[mood]) {
                 const piece = moodDescriptions[mood];
                 moodInfo.innerHTML = `
@@ -75,7 +66,6 @@ function setupMoodPlayer() {
         });
     });
     
-    // Auto-select the first mood on page load
     if (moodButtons.length > 0) {
         // Slight delay to ensure the page is fully loaded
         setTimeout(() => {

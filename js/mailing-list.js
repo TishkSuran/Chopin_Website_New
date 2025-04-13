@@ -4,7 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get form elements
     const form = document.getElementById('mailing-list-form');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
@@ -13,28 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const responseMessage = document.getElementById('response-message');
     
     if (form) {
-        // Form submission handler
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-            
-            // Reset error messages
+
             clearErrors();
-            
-            // Get input values
+
             const name = nameInput.value.trim();
             const email = emailInput.value.trim();
-            
-            // Validate inputs
+
             if (validateForm(name, email)) {
-                // If validation passes, submit to server
                 submitToServer(name, email);
             }
         });
     }
-    
-    /**
-     * Clear all error messages
-     */
+
     function clearErrors() {
         nameError.textContent = '';
         emailError.textContent = '';
@@ -43,16 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         responseMessage.style.display = 'none';
     }
     
-    /**
-     * Validate form inputs
-     * @param {string} name - User's name
-     * @param {string} email - User's email
-     * @returns {boolean} - Whether the form is valid
-     */
+
     function validateForm(name, email) {
         let isValid = true;
         
-        // Validate name
         if (name === '') {
             nameError.textContent = 'Please enter your name';
             isValid = false;
@@ -60,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nameError.textContent = 'Name must be at least 2 characters';
             isValid = false;
         }
-        
-        // Validate email
+
         if (email === '') {
             emailError.textContent = 'Please enter your email address';
             isValid = false;
@@ -73,29 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
     
-    /**
-     * Check if email is valid using regex
-     * @param {string} email - Email to validate
-     * @returns {boolean} - Whether email is valid
-     */
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
     
-    /**
-     * Submit form data to server API
-     * @param {string} name - User's name
-     * @param {string} email - User's email
-     */
     function submitToServer(name, email) {
-        // Show loading state
         const submitButton = form.querySelector('.submit-btn');
         const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
         
-        // Prepare data for API
         const data = {
             name: name,
             email: email
@@ -110,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(data)
         })
         .then(response => {
-            // Check if response is OK
             if (!response.ok) {
-                // Check specific error types
                 if (response.status === 400) {
                     throw new Error('Invalid email format. Please check your email address.');
                 } else {
@@ -122,25 +92,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            // Handle successful response
             showSuccessMessage(data.message || 'Thank you for subscribing to our mailing list!');
             form.reset();
         })
         .catch(error => {
-            // Handle error
             showErrorMessage(error.message);
         })
         .finally(() => {
-            // Reset button state
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
         });
     }
     
-    /**
-     * Display success message
-     * @param {string} message - Success message
-     */
+
     function showSuccessMessage(message) {
         responseMessage.textContent = message;
         responseMessage.classList.add('success');
@@ -148,10 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         responseMessage.style.display = 'block';
     }
     
-    /**
-     * Display error message
-     * @param {string} message - Error message
-     */
+
     function showErrorMessage(message) {
         responseMessage.textContent = message;
         responseMessage.classList.add('error');

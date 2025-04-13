@@ -1,0 +1,245 @@
+/* Hall of Fame Page Styles */
+
+.hof-section {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+}
+
+/* Year selector styles */
+.year-selector {
+    margin: 30px 0;
+    background-color: rgba(17, 17, 17, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.year-selector .form-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.year-selector label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.year-selector select {
+    padding: 10px 15px;
+    background-color: #121212;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 150px;
+    cursor: pointer;
+    outline: none;
+}
+
+.year-selector select:focus {
+    border-color: var(--accent-color);
+}
+
+.year-btn {
+    background-color: var(--accent-color);
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.year-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* Loading indicator */
+.loading-indicator {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 157, 53, 0.2);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error-message {
+    display: none;
+    background-color: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Hall of Fame results */
+.hof-results {
+    margin-top: 30px;
+}
+
+.hof-year-header {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.hof-year-header h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.inductees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.inductee-card {
+    background-color: rgba(17, 17, 17, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inductee-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.inductee-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+.inductee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.inductee-card:hover .inductee-image img {
+    transform: scale(1.05);
+}
+
+.inductee-info {
+    padding: 20px;
+}
+
+.inductee-info h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.inductee-category {
+    display: inline-block;
+    background-color: rgba(255, 157, 53, 0.2);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.inducted-members {
+    margin: 12px 0;
+}
+
+.inducted-members h5 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.inducted-members ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inducted-members li {
+    padding: 3px 0;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.inducted-members li:before {
+    content: "• ";
+    color: var(--accent-color);
+}
+
+.inductee-bio {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.no-inductees {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(17, 17, 17, 0.4);
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.no-inductees h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .year-selector .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .year-selector select,
+    .year-btn {
+        width: 100%;
+    }
+    
+    .inductees-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hof-section {
+        padding: 20px 15px;
+    }
+    
+    .inductee-info h4 {
+        font-size: 18px;
+    }
+}

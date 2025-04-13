@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frédéric Chopin | Hall of Fame</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hall-of-fame.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Chopin</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="biography.html">Biography</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="nocturnes.html">Nocturnes</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="interactive.html">Interactive</a></li>
+                    <li><a href="mailing-list.html">Mailing List</a></li>
+                    <li><a href="hall-of-fame.html" class="active">Hall of Fame</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <section class="hero-section">
+                <div>
+                    <p class="composer">MUSICAL HISTORY</p>
+                    <h1>Rock & Roll Hall of Fame</h1>
+                    <p>Explore the legendary artists who have been inducted into the Rock & Roll Hall of Fame. While Chopin predates rock and roll by over a century, his innovative approach to composition and performance has inspired countless musicians across all genres.</p>
+                </div>
+            </section>
+
+            <section class="hof-section">
+                <h2 class="section-title">Hall of Fame Inductees</h2>
+                <p>Select a year to view the artists inducted into the Rock & Roll Hall of Fame. Each year highlights influential musicians who have made significant contributions to the world of music.</p>
+                
+                <div class="year-selector">
+                    <form id="year-form">
+                        <div class="form-group">
+                            <label for="year-select">Select Year:</label>
+                            <select id="year-select" name="year">
+                                <option value="2021" selected>2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                                <option value="1989">1989</option>
+                                <option value="1988">1988</option>
+                                <option value="1987">1987</option>
+                                <option value="1986">1986</option>
+                            </select>
+                            <button type="submit" class="year-btn">View Inductees</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="loading-indicator" class="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Loading Hall of Fame data...</p>
+                </div>
+                
+                <div id="error-message" class="error-message"></div>
+                
+                <div id="hof-results" class="hof-results">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </section>
+            
+            <section class="quote-section">
+                <div class="quote-container">
+                    <blockquote>
+                        "Music expresses that which cannot be said and on which it is impossible to be silent."
+                        <cite>— Victor Hugo</cite>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Chopin</div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="biography.html">Biography</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="nocturnes.html">Nocturnes</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="interactive.html">Interactive</a></li>
+                            <li><a href="hall-of-fame.html">Hall of Fame</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p>For inquiries: <a href="mailto:info@chopinmusic.org">info@chopinmusic.org</a></p>
+                        <p>Subscribe to our <a href="mailing-list.html">mailing list</a> for updates.</p>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Chopin Music Appreciation Society. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/hall-of-fame.js"></script>
+</body>
+</html>
