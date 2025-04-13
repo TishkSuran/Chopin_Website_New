@@ -10,7 +10,7 @@ A responsive website dedicated to the life and works of Frédéric Chopin, creat
 - **Mailing List**: Form with validation and API integration
 - **Rock & Roll Hall of Fame**: Interactive guide to Hall of Fame inductees by year
 - **Image Gallery**: Showcase of Chopin-related imagery
-- **Modular CSS**: Well-organized CSS structure for better maintainability
+- **Modular CSS**: Well-organised CSS structure for better maintainability
 
 ## Technical Implementation
 
