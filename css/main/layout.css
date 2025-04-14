@@ -3,6 +3,7 @@
 /* Main Content Container */
 .main-content {
     width: 100%;
+    /* max-width: 1400px; decided against this - let container handle it */
 }
 
 /* Header and Navigation */

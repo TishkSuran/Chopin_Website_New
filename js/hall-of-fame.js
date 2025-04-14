@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         yearHeader.className = 'hof-year-header';
         yearHeader.innerHTML = `
             <h3>Rock & Roll Hall of Fame Inductees ${year}</h3>
-            <p>Artists and contributors recognized for their significant impact on the evolution of rock and roll.</p>
+            <p>Artists and contributors recognised for their significant impact on the evolution of rock and roll.</p>
         `;
         hofResults.appendChild(yearHeader);
         

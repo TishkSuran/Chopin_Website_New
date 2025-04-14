@@ -1,5 +1,7 @@
 /* Responsive Styles */
 
+/* I started with a desktop design and then worked backward for smaller screens. */
+
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1200px) {
     .featured-card img {
@@ -38,6 +40,7 @@
 }
 
 /* Small devices (landscape phones, less than 768px) */
+/* It does not look good, but I did try */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -112,29 +115,3 @@
     }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 576px) {
-    .hero-section {
-        padding: 40px 20px;
-    }
-    
-    .hero-section h1 {
-        font-size: 30px;
-    }
-    
-    .section-title {
-        font-size: 26px;
-    }
-    
-    .quote-container blockquote {
-        font-size: 18px;
-    }
-    
-    .featured-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .featured-card img {
-        height: 350px;
-    }
-}

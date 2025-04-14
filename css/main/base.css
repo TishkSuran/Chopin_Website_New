@@ -22,7 +22,7 @@ body {
     line-height: 1.6;
 }
 
-/* Container */
+/* Main container - 1200px seemed the best compromise for desktop/laptop */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,12 +35,13 @@ body {
     margin: 30px 0 20px;
     padding-bottom: 10px;
     position: relative;
+    /* TODO: maybe add subtle underline? */
 }
 
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #121212;
+    background-color: #121212; /* slightly darker than bg */
     color: var(--text-color);
     text-decoration: none;
     border-radius: 4px;
@@ -53,7 +54,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hide audio elements */
+/* Hide default audio controls - I'm not a fan! */
 audio {
     display: none;
 }

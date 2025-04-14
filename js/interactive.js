@@ -22,22 +22,22 @@ function setupMoodPlayer() {
     let activeButton = null;
     
     const moodDescriptions = {
-        'melancholy': {
-            title: "Prelude in E minor, Op. 28, No. 4",
-            description: "This somber prelude captures a sense of profound sadness and introspection. Composed in 1839, this piece is known for its deep emotional impact and haunting melody. The repeated chord progression creates a sense of inevitability and resignation."
-        },
-        'joyful': {
-            title: "Grande Valse Brillante in E-flat major, Op. 18",
-            description: "This lively waltz expresses elegance, optimism, and the joy of dance. Composed in 1833, it exemplifies Chopin's ability to elevate the waltz from a simple dance form to concert music. Its sparkling runs and joyful themes create an atmosphere of celebration."
-        },
-        'passionate': {
-            title: "Revolutionary Étude in C minor, Op. 10, No. 12",
-            description: "This powerful étude conveys intense emotion and revolutionary spirit. Written around 1831 in response to the failed Polish uprising against Russia, its dramatic descending left-hand passages and emotional intensity make it one of Chopin's most recognizable works."
-        },
-        'dreamy': {
-            title: "Nocturne in E-flat major, Op. 9, No. 2",
-            description: "This beloved nocturne evokes the tranquil, dreamy atmosphere of night. Composed in 1830-1832, it features a beautiful, ornate melody over a steady left-hand accompaniment. The piece creates a sense of intimate reflection and gentle contemplation."
-        }
+            'melancholy': {
+              title: "Prelude in E minor, Op. 28, No. 4",
+              description: "A sad, reflective piece from 1839. Known for its haunting melody and emotional impact."
+            },
+            'joyful': {
+              title: "Grande Valse Brillante in E-flat major, Op. 18",
+              description: "An upbeat waltz from 1833 that's full of energy and optimism. Perfect for celebrating."
+            },
+            'passionate': {
+              title: "Revolutionary Étude in C minor, Op. 10, No. 12",
+              description: "A powerful, intense piece from 1831. Written after Poland's failed uprising against Russia."
+            },
+            'dreamy': {
+              title: "Nocturne in E-flat major, Op. 9, No. 2",
+              description: "A gentle night piece from 1830-32. Features a beautiful melody that feels like floating."
+            }
     };
 
     moodButtons.forEach(button => {

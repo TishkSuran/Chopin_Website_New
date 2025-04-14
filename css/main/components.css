@@ -22,11 +22,13 @@
     margin-bottom: 15px;
 }
 
+
+/* Album cover style */
 .album-art {
     width: 60px;
     height: 60px;
     margin-right: 20px;
-    background-color: #333;
+    background-color: #333; /* placeholder bg */
     border-radius: 4px;
     overflow: hidden;
 }
@@ -54,6 +56,7 @@
     margin-top: 10px;
 }
 
+/* Semi transpparent tags, very nice very nice */
 .genre-tag {
     background-color: rgba(243, 156, 55, 0.2);
     color: var(--accent-color);
@@ -68,12 +71,14 @@
     align-items: center;
 }
 
+/* Play button - decided to go with circular */
 .play-btn {
     background-color: var(--accent-color);
     border: none;
     width: 36px;
     height: 36px;
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +98,9 @@
 .play-btn svg {
     width: 16px;
     height: 16px;
+
 }
+
 
 .action-btn {
     background: none;
@@ -150,7 +157,6 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
     opacity: 0;
