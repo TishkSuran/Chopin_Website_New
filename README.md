@@ -1,6 +1,6 @@
 # Chopin Fan Website
 
-A responsive website dedicated to the life and works of Frédéric Chopin, created for the Web Development module at Manchester Metropolitan University.
+A responsive website dedicated to the life and works of Frédéric Chopin, created for the Introduction to Web Dev module at MMU.
 
 ## Features
 
