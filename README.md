@@ -87,3 +87,16 @@ The site integrates with two external APIs:
 - The gallery page is intentionally left with minimum content as it exceeds assignment requirements
 - The works page contains a placeholder message explaining that the additional content would exceed assignment scope
 
+# Responsive Design - Chopin Website
+
+I made this site look good on phones, tablets and computers by:
+
+- Using flexible layouts that adjust to screen width
+- Shrinking the navigation into a more compact layout on phones
+- Making images resize properly on small screens
+- Adjusting text size and spacing for better readability
+- Using media queries at 768px, 992px and 1200px breakpoints
+
+The most challenging part was the timeline on the biography page, which I redesigned to flow vertically on phones. The audio player was also tricky - I had to make the controls stack better on narrow screens.
+
+I tested on Chrome's device simulator to make sure everything looked right on different screen sizes.

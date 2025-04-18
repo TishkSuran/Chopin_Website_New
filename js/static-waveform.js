@@ -1,43 +1,65 @@
+// Global var to track what's playing
 let currentTrack = null;
 
-// Set everything up when page loads
+// Let's go when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  // Find all tracks and set them up
+  // Grab all tracks
   document.querySelectorAll('.track').forEach((track, i) => {
+    // Give it an ID if missing
     if (!track.id) track.id = `track-${i+1}`;
     
+    // Add the fancy waveform
     makeWaveform(track);
     
-    // Add click handlers
-    if (track.querySelector('.play-btn')) {
-      track.querySelector('.play-btn').onclick = () => playTrack(track);
+    const playBtn = track.querySelector('.play-btn');
+    if (playBtn) {
+      playBtn.onclick = function() { 
+        playTrack(track); 
+      };
     }
     
-    if (track.querySelector('.waveform-container')) {
-      track.querySelector('.waveform-container').onclick = (e) => seekAudio(track, e);
+    // Let users click the waveform to skip
+    const waveform = track.querySelector('.waveform-container');
+    if (waveform) {
+      waveform.onclick = function(e) { 
+        seekAudio(track, e); 
+      };
+    }
+
+    const favBtn = track.querySelector('.action-btn[title="Add to favourites"]');
+    if (favBtn) {
+      favBtn.onclick = function() { 
+        toggleFav(favBtn, track); 
+      };
     }
     
-    // Add handlers for the action buttons
-    const fav = track.querySelector('.action-btn[title="Add to favourites"]');
-    if (fav) fav.onclick = () => toggleFav(fav, track);
+    const playlistBtn = track.querySelector('.action-btn[title="Add to playlist"]');
+    if (playlistBtn) {
+      playlistBtn.onclick = function() { 
+        addToPlaylist(playlistBtn, track); 
+      };
+    }
     
-    const playlist = track.querySelector('.action-btn[title="Add to playlist"]');
-    if (playlist) playlist.onclick = () => addToPlaylist(playlist, track);
-    
-    const share = track.querySelector('.action-btn[title="Share"]');
-    if (share) share.onclick = () => shareTrack(track);
+    const shareBtn = track.querySelector('.action-btn[title="Share"]');
+    if (shareBtn) {
+      shareBtn.onclick = function() { 
+        shareTrack(track); 
+      };
+    }
   });
 });
 
+// Creates audio visual
 function makeWaveform(track) {
   const container = document.createElement('div');
   container.className = 'waveform-container';
   
-  // Create waveform with random heights
+  // Make the visual bars
   const waveform = document.createElement('div');
   waveform.className = 'static-waveform';
   
-  // Add 150 bars with random heights
+  // Lots of random-height bars for a pseudo-waveform
+  // Not real data but looks good enough!
   for (let i = 0; i < 150; i++) {
     const wrapper = document.createElement('div');
     wrapper.className = 'bar-wrapper';
@@ -55,63 +77,82 @@ function makeWaveform(track) {
     waveform.appendChild(wrapper);
   }
   
-  // Add progress bar parts
+  // Add the time tracker parts
   container.appendChild(waveform);
-  container.appendChild(document.createElement('div')).className = 'progress-overlay';
-  container.appendChild(document.createElement('div')).className = 'progress-handle';
   
-  // Add time display
+  // Progress 
+  const overlay = document.createElement('div');
+  overlay.className = 'progress-overlay';
+  container.appendChild(overlay);
+  
+  const handle = document.createElement('div');
+  handle.className = 'progress-handle';
+  container.appendChild(handle);
+  
+  // Show time elapsed/total
   const time = document.createElement('div');
   time.className = 'time-display';
   time.innerHTML = '<span class="current-time">0:00</span><span class="duration">0:00</span>';
   container.appendChild(time);
   
-  // Add to track
+
   const controls = track.querySelector('.track-controls');
-  if (controls) controls.before(container);
-  else track.appendChild(container);
+  if (controls) {
+    controls.before(container);
+  } else {
+    track.appendChild(container);
+  }
 }
 
-// Handle play/pause
+// Play/pause toggle
 function playTrack(track) {
   const src = track.getAttribute('data-src');
   const btn = track.querySelector('.play-btn');
   
-  // Stop other playing tracks
+  // Only one track at a time 
   if (currentTrack && currentTrack.id !== track.id) {
     resetButton(document.getElementById(currentTrack.id));
     currentTrack.pause();
   }
   
-  // Get or create audio element
   let audio = track.querySelector('audio');
   if (!audio) {
     audio = document.createElement('audio');
     audio.src = src;
     audio.id = track.id;
     
-    // Add event listeners
-    audio.ontimeupdate = () => updateProgress(track);
-    audio.onloadedmetadata = () => updateDuration(track);
-    audio.onended = () => resetButton(track);
-    audio.onwaiting = () => track.classList.add('loading');
-    audio.oncanplaythrough = () => track.classList.remove('loading');
+    audio.ontimeupdate = function() { 
+      updateProgress(track); 
+    };
+    audio.onloadedmetadata = function() { 
+      updateDuration(track); 
+    };
+    audio.onended = function() { 
+      resetButton(track); 
+    };
+    audio.onwaiting = function() { 
+      track.classList.add('loading'); 
+    };
+    audio.oncanplaythrough = function() { 
+      track.classList.remove('loading'); 
+    };
     
     track.appendChild(audio);
   }
   
-  // Play or pause
+  // Toggle play state
   if (audio.paused) {
+    // Show loading indicator
     track.classList.add('loading');
     
     currentTrack = audio;
     audio.play()
-      .then(() => {
+      .then(function() {
         track.classList.remove('loading');
-        // Change to pause icon
         btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/></svg>';
       })
-      .catch(err => {
+      .catch(function(err) {
+        // Might happen a bit too often
         console.error('Play error:', err);
         track.classList.remove('loading');
         alert('Could not play audio file');
@@ -122,7 +163,6 @@ function playTrack(track) {
   }
 }
 
-// Reset play button to play icon
 function resetButton(track) {
   const btn = track.querySelector('.play-btn');
   if (btn) {
@@ -130,7 +170,7 @@ function resetButton(track) {
   }
 }
 
-// Update progress bar during playback
+// Move progress bar as song plays
 function updateProgress(track) {
   const audio = track.querySelector('audio');
   const progress = track.querySelector('.progress-overlay');
@@ -145,7 +185,7 @@ function updateProgress(track) {
   }
 }
 
-// Update duration when metadata loads
+// Set total duration when we know it
 function updateDuration(track) {
   const audio = track.querySelector('audio');
   const duration = track.querySelector('.duration');
@@ -155,58 +195,73 @@ function updateDuration(track) {
   }
 }
 
-// Skip to position when clicking waveform
+// Jump to timestamp when clicking waveform
 function seekAudio(track, event) {
   const audio = track.querySelector('audio');
   const waveform = track.querySelector('.waveform-container');
   
   if (audio && waveform) {
+    // Figure out where they clicked
     const rect = waveform.getBoundingClientRect();
     const clickPos = (event.clientX - rect.left) / rect.width;
+    
+    // Jump to that spot
     audio.currentTime = clickPos * audio.duration;
     updateProgress(track);
   }
 }
 
-// Format seconds to MM:SS
+// Make MM:SS format from seconds
 function formatTime(seconds) {
   if (isNaN(seconds)) return '0:00';
+  
   const min = Math.floor(seconds / 60);
   const sec = Math.floor(seconds % 60);
+  
+  // Pad seconds with leading zero if needed
   return `${min}:${sec.toString().padStart(2, '0')}`;
 }
 
-// Toggle favorite state
+// Heart button toggle
 function toggleFav(btn, track) {
   const title = track.querySelector('.track-details h3').textContent;
   
+  // Toggle state
   if (btn.classList.contains('active')) {
+    // Unfavorite
     btn.classList.remove('active');
     btn.querySelector('path').setAttribute('fill', 'currentColor');
     alert(`Removed "${title}" from favorites`);
   } else {
+    // Favorite
     btn.classList.add('active');
     btn.querySelector('path').setAttribute('fill', '#FF9D35');
     alert(`Added "${title}" to favorites`);
   }
 }
 
-// Add to playlist
+// Add to playlist button
 function addToPlaylist(btn, track) {
   const title = track.querySelector('.track-details h3').textContent;
+  
+  // Visual feedback
   btn.classList.add('active');
   btn.querySelector('path').setAttribute('fill', '#FF9D35');
   
-  setTimeout(() => {
+  // Reset after a sec
+  setTimeout(function() {
     btn.classList.remove('active');
     btn.querySelector('path').setAttribute('fill', 'currentColor');
   }, 1000);
   
+  // Would connect to backend in real app
   alert(`Added "${title}" to your playlist`);
 }
 
-// Share track
+// Share button
 function shareTrack(track) {
   const title = track.querySelector('.track-details h3').textContent;
+  
+  // In a real app, this would copy a valid link to clipboard, but the link can not be used in this case
   alert(`Share link copied: "${title}" by Chopin`);
 }

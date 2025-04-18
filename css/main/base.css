@@ -35,7 +35,7 @@ body {
     margin: 30px 0 20px;
     padding-bottom: 10px;
     position: relative;
-    /* TODO: maybe add subtle underline? */
+    /* TODO: ? */
 }
 
 .btn {
@@ -54,7 +54,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hide default audio controls - I'm not a fan! */
+/* Hide default audio controls, I'm not a big fan! */
 audio {
     display: none;
 }
